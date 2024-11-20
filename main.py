@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import time
-from myapp import ahmed
+from myapp import timer_function, listen_function
 
 
 # Function to handle image click
@@ -47,11 +47,14 @@ for idx, (file, pos) in enumerate(zip(image_files, positions)):
 
 
 def periodic_function():
-    ahmed()
+    timer_function()
     # Schedule the function to run again after 1000ms (1 second)
     root.after(1000, periodic_function)
 
 
+listen_function()
 periodic_function()
+
+
 # Start the Tkinter event loop
 root.mainloop()
